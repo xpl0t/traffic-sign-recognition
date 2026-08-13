@@ -1,0 +1,2 @@
+ultralytics==8.4.115
+ultralytics[export-base]==8.4.115

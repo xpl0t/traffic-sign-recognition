@@ -1,0 +1,5 @@
+.venv
+FullIJCNN2013
+dataset
+runs
+*.pt

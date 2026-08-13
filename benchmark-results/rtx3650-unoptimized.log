@@ -1,0 +1,39 @@
+Benchmarks complete for runs/detect/train-nano/weights/best.pt on dataset.yml at imgsz=640 (9.05s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         9.7         0.2666                11.73                    85.23 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for runs/detect/train-small/weights/best.pt on dataset.yml at imgsz=640 (8.24s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.8        0.4721                14.44                    69.23 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for runs/detect/train-medium/weights/best.pt on dataset.yml at imgsz=640 (10.75s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS  |
++==============================================================================================+
+| 1   TorchScript   ✅         78.4        0.5732                20.49                    48.8 |
++----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for runs/detect/train-large/weights/best.pt on dataset.yml at imgsz=640 (12.14s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         95.4        0.5442                27.61                    36.22 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for runs/detect/train-xxl-incomplete/weights/best.pt on dataset.yml at imgsz=640 (20.35s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS  |
++==============================================================================================+
+| 1   TorchScript   ✅         213.3       0.6134                38.02                    26.3 |
++----------------------------------------------------------------------------------------------+
