@@ -1,0 +1,32 @@
+
+Benchmarks complete for models/train-nano/weights/best_float32.pt on dataset.yml at imgsz=640 (33.63s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++------------------------------------------------------------------------------------------+
+|     Format   Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++==========================================================================================+
+| 1   CoreML   ✅         9.4         0.2659                29.32                    34.11 |
++------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small/weights/best_float32.pt on dataset.yml at imgsz=640 (16.82s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++------------------------------------------------------------------------------------------+
+|     Format   Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++==========================================================================================+
+| 1   CoreML   ✅         36.4        0.4742                62.2                     16.08 |
++------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-medium/weights/best_float32.pt on dataset.yml at imgsz=640 (31.77s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------+
+|     Format   Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS  |
++=========================================================================================+
+| 1   CoreML   ✅         78.0        0.5762                168.58                   5.93 |
++-----------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-large/weights/best_float32.pt on dataset.yml at imgsz=640 (38.19s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------+
+|     Format   Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS  |
++=========================================================================================+
+| 1   CoreML   ✅         94.9        0.5431                203.48                   4.91 |
++-----------------------------------------------------------------------------------------+

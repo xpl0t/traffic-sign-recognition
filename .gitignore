@@ -2,4 +2,4 @@
 FullIJCNN2013
 dataset
 runs
-*.pt
+yolo*.pt

@@ -1,13 +1,20 @@
 from ultralytics.utils.benchmarks import benchmark
 
+import config
+
+# models = [
+#     "models/train-nano/weights/best.pt",
+#     "models/train-small/weights/best.pt",
+#     "models/train-medium/weights/best.pt",
+#     "models/train-large/weights/best.pt",
+# ]
 models = [
-    "runs/detect/train-nano/weights/best.pt",
-    "runs/detect/train-small/weights/best.pt",
-    "runs/detect/train-medium/weights/best.pt",
-    "runs/detect/train-large/weights/best.pt",
-    "runs/detect/train-xxl-incomplete/weights/best.pt",
+    "models/train-nano/weights/best_float32.pt",
+    "models/train-small/weights/best_float32.pt",
+    "models/train-medium/weights/best_float32.pt",
+    "models/train-large/weights/best_float32.pt",
 ]
 
 for model in models:
-    # Use only torchscript format, as most of the other formats require nvidia gpu
-    benchmark(model=model, data="dataset.yml", imgsz=640, device=0, format="torchscript")
+    # Use torchscript format for amd rocm backend and coreml format for apple mps backend
+    benchmark(model=model, task="detect", data="dataset.yml", imgsz=640, device=config.DEVICE, format=config.BENCH_FORMAT)

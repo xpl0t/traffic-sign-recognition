@@ -1,6 +1,8 @@
 from ultralytics import YOLO
 
-model = YOLO("yolo26n.pt")
+import config
+
+model = YOLO("yolo26s.pt")
 
 results = model.tune(
     data="dataset.yml",
@@ -9,5 +11,5 @@ results = model.tune(
     optimizer="AdamW",
     plots=True,
     save=True,
-    device=0
+    device=config.DEVICE
 )
