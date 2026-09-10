@@ -8,12 +8,16 @@ import config
 #     "models/train-medium/weights/best.pt",
 #     "models/train-large/weights/best.pt",
 # ]
+# models = [
+#     "models/train-nano/weights/best_float32.pt",
+#     "models/train-small/weights/best_float32.pt",
+#     "models/train-medium/weights/best_float32.pt",
+#     "models/train-large/weights/best_float32.pt",
+# ]
 models = [
-    "models/train-nano/weights/best_float32.pt",
-    "models/train-small/weights/best_float32.pt",
-    "models/train-medium/weights/best_float32.pt",
-    "models/train-large/weights/best_float32.pt",
-]
+    "models/train-small/weights/best.pt",
+    "models/train-small-optimized/weights/best.pt"
+    ]
 
 for model in models:
     # Use torchscript format for amd rocm backend and coreml format for apple mps backend
