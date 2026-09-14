@@ -10,6 +10,7 @@ results = model.train(
     epochs=100,
     imgsz=640,
     device=config.DEVICE,
+    optimizer="AdamW",
     lr0=0.00151,
     lrf=0.0158,
     momentum=0.85434,

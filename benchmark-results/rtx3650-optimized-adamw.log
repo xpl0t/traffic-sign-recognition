@@ -1,0 +1,72 @@
+
+Benchmarks complete for models/train-small/weights/best.pt on dataset.yml at imgsz=640 (9.91s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.7        0.4721                13.94                    71.72 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized/weights/best.pt on dataset.yml at imgsz=640 (7.02s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.8        0.4519                14.27                    70.09 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized-adamw/weights/best.pt on dataset.yml at imgsz=640 (7.02s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.8        0.5678                14.32                    69.84 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small/weights/best.pt on dataset.yml at imgsz=640 (9.70s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.7        0.4721                14.09                    70.98 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized/weights/best.pt on dataset.yml at imgsz=640 (7.21s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS  |
++==============================================================================================+
+| 1   TorchScript   ✅         36.8        0.4519                14.49                    69.0 |
++----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized-adamw/weights/best.pt on dataset.yml at imgsz=640 (7.15s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.8        0.5678                14.33                    69.77 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized-adamw/weights/best.pt on dataset.yml at imgsz=640 (9.71s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.7        0.5678                14.16                    70.63 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small/weights/best.pt on dataset.yml at imgsz=640 (7.18s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.8        0.4721                14.23                    70.28 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized/weights/best.pt on dataset.yml at imgsz=640 (7.10s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         36.8        0.4519                14.11                    70.85 |
++-----------------------------------------------------------------------------------------------+

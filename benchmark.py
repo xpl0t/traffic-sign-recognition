@@ -15,8 +15,9 @@ import config
 #     "models/train-large/weights/best_float32.pt",
 # ]
 models = [
+    "models/train-small-optimized-adamw/weights/best.pt",
     "models/train-small/weights/best.pt",
-    "models/train-small-optimized/weights/best.pt"
+    "models/train-small-optimized/weights/best.pt",
     ]
 
 for model in models:
