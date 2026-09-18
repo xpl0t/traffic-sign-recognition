@@ -1,0 +1,92 @@
+from queue import Queue
+import cv2
+import threading
+import time
+from ultralytics import YOLO
+
+# Configuration
+# source = "/Users/weih/Desktop/DJI_20260215175333_0108_D.MP4"
+source = "/home/weih/Videos/1.mp4"
+# source = 0 # Webcam
+model_path = "models/train-medium/weights/best.pt"
+
+# YOLO model and opencv video capture
+model = YOLO(model_path)
+cap = cv2.VideoCapture(source)
+
+# Shared variables
+stream_finished = False
+frame = None
+frame_lock = threading.Lock()
+results = None
+results_lock = threading.Lock()
+
+
+def yolo_detection_loop():
+    global model, stream_finished, frame, frame_lock, results, results_lock
+
+    while not stream_finished:
+        frame_copy = None
+
+        # Wait until next frame available
+        while not stream_finished:
+            with frame_lock:
+                if frame is not None:
+                    frame_copy = frame.copy()
+                    frame = None
+                    break
+            time.sleep(0.01)
+
+        if stream_finished:
+            break
+
+
+        # Detect objects in the frame
+        start_time = time.time()
+        res = model(frame_copy, verbose=False, conf=0.5)
+        print("\rYOLO FPS: {:.2f}".format(1 / (time.time() - start_time)), end="")
+
+
+        # Set results in global results variable
+        with results_lock:
+            results = res
+
+def video_stream():
+    global cap, stream_finished, frame, frame_lock, results, results_lock
+
+    while cap.isOpened():
+
+        ret, cur_frame = cap.read()
+        if not ret:
+            break
+
+        with frame_lock:
+            frame = cur_frame
+
+        with results_lock:
+            if results is not None:
+                # Draw bounding boxes onto the current frame
+                cur_frame = results[0].plot(img=cur_frame)
+
+        cv2.imshow("live", cur_frame)
+
+        # Quit if 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    stream_finished = True
+
+
+# Start the YOLO detection thread
+detect_th = threading.Thread(target=yolo_detection_loop)
+detect_th.start()
+
+# Start video streaming
+video_stream()
+
+# Cleanup
+cap.release()
+cv2.destroyAllWindows()
+
+# Join YOLO detection thread and wait for exit
+detect_th.join()
