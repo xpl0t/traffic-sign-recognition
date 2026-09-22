@@ -1,0 +1,7 @@
+1 0 61 30_limit
+38 258 381 keep_right
+27 258 377 pedestrians
+12 305 410 priority_road
+38 418 533
+27 634 707
+38 746 869 double_keep_right
