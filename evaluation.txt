@@ -1,0 +1,25 @@
+Model: small-optimized-adamw-1280
+
+Day:
+
+Total possible detections / Total actual detections (w false positives):  5275 4370
+Possible signs detected [num / %]:  3059 0.58
+True positives [num / %]:  3059 0.70
+False positives [num / %]:  1311 0.30
+Model quality [tp_% * possible_signs_%]:  0.41
+
+Sunset:
+
+Total possible detections / Total actual detections (w false positives):  4638 2446
+Possible signs detected [num / %]:  2157 0.47
+True positives [num / %]:  2157 0.88
+False positives [num / %]:  289 0.12
+Model quality [tp_% * possible_signs_%]:  0.41
+
+Night:
+
+Total possible detections / Total actual detections (w false positives):  5249 1186
+Possible signs detected [num / %]:  1126 0.21
+True positives [num / %]:  1126 0.95
+False positives [num / %]:  60 0.05
+Model quality [tp_% * possible_signs_%]:  0.20

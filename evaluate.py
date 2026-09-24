@@ -13,18 +13,27 @@ class Sign:
     sign_class: int
 
 
+def format_float(num):
+    return "{:.2f}".format(num)
+
+# signs_spans_path = "sign-spans/sign-spans-day.txt"
+# signs_path = "/home/weih/Videos/circuito/circuito_day_50_cloud_labels.txt"
+# signs_spans_path = "sign-spans/sign-spans-sunset.txt"
+# signs_path = "/home/weih/Videos/circuito/circuito_sunset_labels.txt"
+signs_spans_path = "sign-spans/sign-spans-night.txt"
+signs_path = "/home/weih/Videos/circuito/circuito_night_labels.txt"
 sign_spans = []
 signs = []
 
-with open("signs.txt", "r") as f:
-    lines = f.readlines()
+with open(signs_spans_path, "r") as f:
+    lines = [ line for line in f.readlines() if line.strip() and not line.startswith("#") ] 
 
     for line in lines:
         parts = line.strip().split()
         sign_spans.append(SignSpan(int(parts[0]), int(parts[1]), int(parts[2])))
 
-with open("out.txt", "r") as f:
-    lines = f.readlines()
+with open(signs_path, "r") as f:
+    lines = [ line for line in f.readlines() if line.strip() and not line.startswith("#") ]
 
     for line in lines:
         parts = line.strip().split()
@@ -44,14 +53,15 @@ for sign_span in sign_spans:
     total += (sign_span.end_frame - sign_span.start_frame)
     detected += cnt
 
-print("True Positives: ", true_positives)
-print("Total true positives: ", detected / total)
+# print("True Positives: ", true_positives)
+possible_signs_detected_percent = detected / total
+print("Total possible detections / Total actual detections (w false positives): ", total, len(signs))
+print("Possible signs detected [num / %]: ", detected, format_float(possible_signs_detected_percent))
 
-false_positives = []
 
-for sign in signs:
-    if not any(sign_span.sign_class == sign.sign_class and sign_span.start_frame <= sign.frame <= sign_span.end_frame for sign_span in sign_spans):
-        false_positives.append(sign)
+tp_percent = detected / len(signs)
+fp_percent = (len(signs) - detected) / len(signs)
+print("True positives [num / %]: ", detected, format_float(tp_percent))
+print("False positives [num / %]: ", (len(signs) - detected), format_float(fp_percent))
 
-print("False Positives: ", len(false_positives))
-print("Percentage false positives: ", len(false_positives) / len(signs))
+print("Model quality [tp_% * possible_signs_%]: ", format_float(tp_percent * possible_signs_detected_percent))

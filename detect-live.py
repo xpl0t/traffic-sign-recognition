@@ -6,13 +6,16 @@ from ultralytics import YOLO
 
 # Configuration
 # source = "/Users/weih/Desktop/DJI_20260215175333_0108_D.MP4"
-source = "/home/weih/Videos/v1-crop.mp4" # 1.mp4"
+source = "/home/weih/Videos/circuito/circuito_sunset.mp4" # 1.mp4"
 # source = 0 # Webcam
-model_path = "models/train-medium/weights/best.pt"
+model_path = "models/train-small-optimized-adamw-1280/weights/best.pt"
 
 # YOLO model and opencv video capture
 model = YOLO(model_path)
 cap = cv2.VideoCapture(source)
+cap_fps = cap.get(cv2.CAP_PROP_FPS)
+cap_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+cap_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # Shared variables
 stream_finished = False
@@ -20,22 +23,20 @@ frame = None
 frame_lock = threading.Lock()
 results = None
 results_lock = threading.Lock()
+frame_cnt = 0 # Frame cnt does not require a lock, as it is only updated in the video_stream() thread.
 
-
-
+# Optional video writer
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 video_writer = cv2.VideoWriter(
     "out.mp4",
     fourcc,
-    cap.get(cv2.CAP_PROP_FPS),
-    #(cap.get(cv2.CAP_PROP_FRAME_WIDTH), cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    (1280, 720)
+    cap_fps,
+    (cap_width, cap_height)
 )
 
 
-
 def yolo_detection_loop():
-    global model, stream_finished, frame, frame_lock, results, results_lock
+    global model, stream_finished, frame, frame_lock, frame_cnt, results, results_lock
 
     while not stream_finished:
         frame_copy = None
@@ -56,15 +57,17 @@ def yolo_detection_loop():
         # Detect objects in the frame
         start_time = time.time()
         res = model(frame_copy, verbose=False, conf=0.5)
-        print("\rYOLO FPS: {:.2f}".format(1 / (time.time() - start_time)), end="")
+        print("\rYOLO FPS: {:.2f}, Second: {:.2f}, Frame: {}".format(1 / (time.time() - start_time), frame_cnt / cap_fps, frame_cnt), end="")
 
 
         # Set results in global results variable
         with results_lock:
             results = res
 
+    print() # New line for fps counter
+
 def video_stream():
-    global cap, stream_finished, frame, frame_lock, results, results_lock
+    global cap, stream_finished, frame, frame_lock, frame_cnt, results, results_lock
 
     while cap.isOpened():
 
@@ -90,6 +93,8 @@ def video_stream():
         # Quit if 'q' is pressed
         if cv2.waitKey(max(1, int((1 / 30) * 1000 - (end_time - start_time) * 1000))) & 0xFF == ord('q'):
             break
+
+        frame_cnt += 1
 
     stream_finished = True
 

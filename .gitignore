@@ -3,3 +3,7 @@ FullIJCNN2013
 dataset
 runs
 yolo*.pt
+
+*.mp4
+*.mkv
+out.txt

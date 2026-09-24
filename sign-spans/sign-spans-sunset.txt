@@ -1,0 +1,58 @@
+12 0 228 prio road
+
+38 299 501 keep_right kreuzung 1
+13 299 483 give_way
+
+38 568 623 verfahren keep right
+27 584 606 pedestrians
+38 711 781 keep right
+
+18 959 1089 danger
+13 1089 1274 give way
+
+
+40 1334 1536 roundabout 
+38 1334 1495
+13 1334 1536
+
+22 1735 1866 uneven road
+13 1735 1846
+13 1859 1886
+
+11 2956 3050 prio at next inter
+
+13 3390 3460
+
+# Durch autos verdeckt
+# 13 4891 5054 kreuzung beim huan
+# 13 5114 5138
+
+1 4414 4547 30 höhe stromkasten
+1 4570 4770
+28 4491 4701 school crossing 1 meter vor linie
+
+25 7841 7958 construction
+17 7964 7999 no_entry
+25 8229 8286 construction
+
+28 10089 10380 school crossing 1m vor kante
+
+13 10911 11132 give way los
+17 11376 11390 no no_entry
+17 11404 11415 no entry
+
+13 11778 12016 baufälliges haus
+12 12046 12293 prio road apotheke
+
+12 12721 12828 inner city prio road
+12 13151 13234
+12 13412 13455
+
+12 13613 13705
+# 13 17051 17077 nicht erkennbar
+
+12 13841 13975 berg hoch prio
+12 14327 14483
+
+1 14614 14762
+12 14843 14870
