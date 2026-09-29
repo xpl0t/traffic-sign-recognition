@@ -2,9 +2,12 @@
 path: dataset
 
 train:
-  - train/images
+  - train
   - train-custom-scale
-val: val/images
+  - train-custom2
+val:
+  - val/images
+  - val-custom2
 test: test/images
 
 # Class count

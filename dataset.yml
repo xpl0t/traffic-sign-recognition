@@ -1,7 +1,7 @@
 
 path: dataset
 
-train: train/images
+train: train
 val: val/images
 test: test/images
 
