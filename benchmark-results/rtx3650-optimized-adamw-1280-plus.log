@@ -1,0 +1,16 @@
+
+Benchmarks complete for models/train-small-optimized-adamw-1280-plus/weights/best.pt on dataset.yml at imgsz=1280 (11.26s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         37.0        0.7892                23.3                     42.92 |
++-----------------------------------------------------------------------------------------------+
+
+Benchmarks complete for models/train-small-optimized-adamw-1280/weights/best.pt on dataset.yml at imgsz=1280 (8.37s)
+Benchmarks legend:  - ✅ Success  - ❎ Export passed but validation failed  - ❌️ Export failed
++-----------------------------------------------------------------------------------------------+
+|     Format        Status❔   Size (MB)   metrics/mAP50-95(B)   Inference time (ms/im)   FPS   |
++===============================================================================================+
+| 1   TorchScript   ✅         37.0        0.7392                23.43                    42.67 |
++-----------------------------------------------------------------------------------------------+
