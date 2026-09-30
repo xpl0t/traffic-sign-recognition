@@ -46,7 +46,8 @@ for bar in bars:
 ax.set_xlabel('Modellgröße', fontsize=13, labelpad=10)
 ax.set_ylabel('Güte (normalisiert)', fontsize=13, labelpad=10)
 
-ax.set_ylim(0.3, 0.7)
+ax.set_ylim(0.4, 0.7)
+ax.set_aspect(aspect=5)
 
 plt.tight_layout()
 plt.savefig('combined_score_barchart.png', dpi=300, bbox_inches='tight')
